@@ -5,8 +5,13 @@ class test(unittest.TestCase):
     def test_true(self):
         self.assertTrue(R("mama"))
         self.assertTrue(R("nn"))
+        self.assertTrue(R("mama papa yes"))
 
-    def test_empty_string(self):
-        self.assertFalse(R("paa"))
+    def test_false(self):
         self.assertFalse(R("  "))
+        self.assertFalse(R("ma pa"))
+        self.assertFalse(R(""))
+        
+        
+        
         

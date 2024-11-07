@@ -9,6 +9,7 @@ class file_job:
         print('Слова в файле: ')
         with open("file.txt", "r") as file:
             print(file.read())
+        
 
     def check(self, name):
         count = 0
@@ -28,9 +29,21 @@ class file_job:
                 
             for i in range(len(list_word)):
                 w = list_word[i]
-                if R(w):   
-                    print("Тандемный повтор пренадлжеит этому слову: " + list_word[i])
+                R(w)
 
 def R(word):
-    if re.match(r"\b(\w+)\1\b", word):
-        return True
+    if word == word.replace(" ", ""):
+        if re.findall(r"\b(\w+)\1\b", word):
+            print("Тандемный повтор пренадлжеит этому слову: " + word)
+            return True
+        else:
+            return False
+    else:
+        res = re.findall(r"\b(\w+)\1\b", word)
+        if res:
+            for i in range(len(res)):
+                res[i] = res[i] * 2
+            print("Тандемный повтор сущетвует в подстроках этой строки: " + word + f" - а именно: {res}")
+            return True
+        else:
+            return False
