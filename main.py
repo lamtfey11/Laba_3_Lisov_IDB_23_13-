@@ -1,7 +1,10 @@
 from file_job import file_job
+import unittest
+from test import *
 
 def menu():
     file = file_job()
+    name_file = 'file.txt'
     command = ''
     count = 0
     print('Выберите, пожалуйста, команду из нижеперечсиленных:')
@@ -11,10 +14,10 @@ def menu():
     while (command != '3'):
         command = input("Введите номер команды: ")
         if command == '1':
-            file.print_and_add_and_enter()
+            file.print_and_add_and_enter(name_file)
             count = 1
         elif command == '2':
-            file.check()
+            file.check(name_file)
         elif command == '3':
             print('Вы вернулись в начальное меню.')
         else:
@@ -29,3 +32,6 @@ while(main != '2'):
         print('До свидания!')
     else:
         print('Неверный ввод.')
+
+if __name__ == "__main__":
+    unittest.main()
