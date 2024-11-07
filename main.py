@@ -1,4 +1,8 @@
+from file_job import file_job
+
+
 def menu():
+    file = file_job()
     print('Выберите, пожалуйста, команду из нижеперечсиленных:')
     print('1. Ввод слова и его добавление в файл.')
     print('2. Проверка слов в файле через регулярное выражение.')
@@ -6,9 +10,9 @@ def menu():
     while (command != '3'):
         command = input("Введите номер команды: ")
         if command == '1':
-            print('1')
+            file.print_and_add_and_enter()
         elif command == '2':
-            print('2')
+            file.check()
         elif command == '3':
             print('Вы вернулись в начальное меню.')
         else:
