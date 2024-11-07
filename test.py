@@ -11,7 +11,3 @@ class test(unittest.TestCase):
         self.assertFalse(R("  "))
         self.assertFalse(R("ma pa"))
         self.assertFalse(R(""))
-        
-        
-        
-        
