@@ -9,7 +9,7 @@ class file_job:
         
         print('Слова в файле: ')
         #открытие файла для чтения и для вывода строк в консоль
-        with open("file.txt", "r") as file:
+        with open(name, "r") as file:
             print(file.read())
         
 
@@ -25,7 +25,7 @@ class file_job:
             print("Файл file.txt не существует.")
         if count == 1:
             #cодрежимое файла сохраняется в списке
-            with open("file.txt", "r", encoding="utf-8") as file:
+            with open(name, "r", encoding="utf-8") as file:
                 list_words_beta = file.readlines()
             
             list_word = list()

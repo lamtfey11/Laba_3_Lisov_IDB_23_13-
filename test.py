@@ -8,6 +8,9 @@ class test(unittest.TestCase):
         self.assertTrue(R("mama papa yes"))
 
     def test_false(self):
+        self.assertFalse(R("Matfeeeeey"))
+
+    def test_probel_false(self):
         self.assertFalse(R("  "))
         self.assertFalse(R("ma pa"))
         self.assertFalse(R(""))
